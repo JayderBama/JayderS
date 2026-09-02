@@ -10,9 +10,11 @@ import path from "path";
 const root = process.cwd();
 
 // Create folders
-["app", "components", "context", "data"].forEach(dir => {
+const dirs = ["app", "components", "context", "data", "app/dashboard"];
+dirs.forEach(dir => {
   fs.mkdirSync(path.join(root, dir), { recursive: true });
 });
+
 
 // package.json
 fs.writeFileSync("package.json", `
